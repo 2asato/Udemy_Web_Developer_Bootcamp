@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Exercise</title>
+  </head>
+  <body>
+
+<!-- validations - first name, last name, and email are required -->
+<!-- bonus - password must be between 5 - 10 characters -->
+
+<!-- for and id must match -->
+<!-- name is for behind the scenes label -->
+<!-- could also do pattern=".{5,10}" title="Password must be between 5 and 10 characters" for password requirment -->
+
+    <h1>Register</h1>
+
+    <form>
+
+      <div class="registerFormDiv">
+
+        <div class="nameFormDiv">
+          <label for="firstName">First Name: </label>
+          <input id="firstName" type="text" name="FirstName" value="" placeholder="John" required>
+
+          <label for="lastName">Last Name: </label>
+          <input id="lastName" type="text" name="LastName" value="" placeholder="Smith" required>
+        </div>
+
+        <div class="genderFormDiv">
+          <label for="male">Male</label>
+          <input id="male" type="radio" name="gender" value="Male">
+
+          <label for="female">Female</label>
+          <input id="female" type="radio" name="gender" value="Female">
+
+          <label for="other">Other</label>
+          <input id="other" type="radio" name="gender" value="Other">
+        </div>
+
+        <div class="emailPWDiv">
+          <label for="formEmail">Email: </label>
+          <input id="formEmail" type="email" name="email" value="" placeholder="your email" required>
+
+          <label for="formPassword">Password: </label>
+          <input id="formPassword" type="password" name="password" value="" minlength="5" maxlength="10">
+        </div>
+
+        <div class="bdayDiv">
+          <label for="">Birthday:
+            <select class="" name="Month">
+              <option value="">Month</option>
+              <option value="Jan">January</option>
+              <option value="Feb">February</option>
+              <option value="Mar">March</option>
+            </select>
+            <select class="" name="Day">
+              <option value="">Day</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <select class="" name="Year">
+              <option value="">Year</option>
+              <option value="1980">1980</option>
+              <option value="1981">1981</option>
+              <option value="1982">1982</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="termsConditions">
+          <label for="agreed">I agree to the terms and conditions </label>
+          <input id="agreed" type="checkbox" name="agreed" value="">
+        </div>
+
+        <input type="submit" name="" value="Submit">
+
+      </div>
+
+    </form>
+
+
+
+
+
+  </body>
+</html>
