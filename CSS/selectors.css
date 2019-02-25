@@ -45,3 +45,13 @@ a[href="http://google.com"]{
 ul:nth-of-type(3) {
   selects the 3rd ul on page
 }
+
+/*SPECIFICITY*/
+
+0. Universal selectors (*)
+
+1. Type selectors (h1) and pseudo-elements (:before)
+
+2. Class selectors (.example) attribute selectors (type="radio") and pseudo-classes (:hover)
+
+3. ID selectors (#example)
