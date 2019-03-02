@@ -1,1 +1,22 @@
+body {
+  /*clears jumbotron from fixed navbar*/
+  padding-top: 70px;
+}
 
+.jumbotron {
+  color: #2c3e50;
+}
+
+.navbar-inverse {
+  background: #2c3e50;
+}
+
+/*check console if colors arent changing*/
+/*change color of elements that are overriding*/
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
