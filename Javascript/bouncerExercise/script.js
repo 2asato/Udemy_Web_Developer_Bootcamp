@@ -4,11 +4,11 @@ if (age < 0) {
   console.log("ERROR!!!");
 }
 
-if (age == 21) {
+if (age === 21) {
   console.log("happy 21st birthday!!");
 }
 
-if (age % 2 == 1) {
+if (age % 2 !== 0) {
   console.log("your age is odd!");
 }
 
