@@ -14,3 +14,10 @@ for (let i = 0; i < links.length; i++) {
   // console.log(links[i].textContent);
   links[i].style.background = "pink"
 }
+
+// change link to redirect to bing.com
+var links = document.getElementsByTagName("a")
+for (let i = 0; i < links.length; i++) {
+  // console.log(links[i].textContent);
+  links[i].setAttribute = ("href", "http://www.bing.com")
+}
