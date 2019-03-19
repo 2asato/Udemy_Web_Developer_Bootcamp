@@ -1,4 +1,4 @@
-PROCESS
+~ PROCESS ~
 
 select an element and then add an event listener
   - click on a button
@@ -6,7 +6,7 @@ select an element and then add an event listener
   - keypress event on text input
 
 
-SYNTAX
+~ SYNTAX ~
 
 to add a listener, use method called addEventListener
 
@@ -28,3 +28,18 @@ button.addEventListener("click", changeText)
 function changeText() {
   paragraph.textContent = "SOMEONE CLICKED THE BUTTON!"
 }
+
+
+~ TYPES ~
+
+click - on click of element
+
+change - on input change
+
+hover - on hover of element
+
+
+
+drag
+
+drop
