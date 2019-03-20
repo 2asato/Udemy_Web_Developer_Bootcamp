@@ -38,7 +38,9 @@ change - on input change
 
 hover - on hover of element
 
+mouseover - soon as mouse on element
 
+mouseout - soon as mouse exits element
 
 drag
 
