@@ -11,9 +11,43 @@ var message = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 // grab reset button
 var reset = document.querySelector("#reset");
+// grab easy button
+var easy = document.querySelector("#easy");
+// grab hard button
+var hard = document.querySelector("#hard");
+var numOfSquares = 6;
 
 // set pickedColor
 var pickedColor = pickColor();
+
+easy.addEventListener("click", function() {
+  easy.classList.add("selected");
+  hard.classList.remove("selected");
+  numOfSquares = 3;
+  colors = generateRandomColors(numOfSquares);
+  pickedColor = pickColor();
+  rgbDisplay.textContent = pickedColor;
+  for (let i = 0; i < squares.length; i++) {
+    if(colors[i]) {
+      squares[i].style.backgroundColor = colors[i];
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
+})
+
+hard.addEventListener("click", function() {
+  easy.classList.remove("selected");
+  hard.classList.add("selected");
+  numOfSquares = 6;
+  colors = generateRandomColors(numOfSquares);
+  pickedColor = pickColor();
+  rgbDisplay.textContent = pickedColor;
+  for (let i = 0; i < squares.length; i++) {
+      squares[i].style.backgroundColor = colors[i];
+      squares[i].style.display = "block";
+  }
+})
 
 // display h1 with picked colors rgb nums
 rgbDisplay.textContent = pickedColor;
@@ -83,7 +117,7 @@ function randomColor() {
 // get new colors/reset
 reset.addEventListener("click", function() {
   // generate all new colors
-  colors = generateRandomColors(6);
+  colors = generateRandomColors(numOfSquares);
   // pick a random color from array
   pickedColor = pickColor();
   // change color display to match picked color
