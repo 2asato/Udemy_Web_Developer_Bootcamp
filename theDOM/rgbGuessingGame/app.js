@@ -9,6 +9,8 @@ var rgbDisplay = document.querySelector("#rgbDisplay");
 var message = document.querySelector("#message");
 // grab h1
 var h1 = document.querySelector("h1");
+// grab reset button
+var reset = document.querySelector("#reset");
 
 // set pickedColor
 var pickedColor = pickColor();
@@ -27,6 +29,7 @@ for (let i = 0; i < squares.length; i++) {
     // compare clicked color to pickedColor
     if (clickedColor === pickedColor) {
       message.textContent = "Correct!!!";
+      reset.textContent = "Play Again";
       changeColors(clickedColor);
       // changes h1 color on correct guess
       h1.style.backgroundColor = clickedColor;
@@ -37,6 +40,7 @@ for (let i = 0; i < squares.length; i++) {
   })
 }
 
+// changes color of squares
 function changeColors(color) {
   // loop through all squares
   for (var i = 0; i < squares.length; i++) {
@@ -45,11 +49,13 @@ function changeColors(color) {
   }
 }
 
+// gets the random color to match
 function pickColor() {
   var random = Math.floor(Math.random() * colors.length);
   return colors[random];
 }
 
+// adds random colors to array to display
 function generateRandomColors(numOfColors) {
   // make an array
   var randomColorsArr = [];
@@ -62,6 +68,7 @@ function generateRandomColors(numOfColors) {
   return randomColorsArr;
 }
 
+// generates random colors
 function randomColor() {
   // pick a red from 0 - 255
   var r = Math.floor(Math.random() * 256);
@@ -72,3 +79,20 @@ function randomColor() {
   return "rgb(" + r + ", " + g + ", " + b + ")";
   // console.log(rgb);
 }
+
+// get new colors/reset
+reset.addEventListener("click", function() {
+  // generate all new colors
+  colors = generateRandomColors(6);
+  // pick a random color from array
+  pickedColor = pickColor();
+  // change color display to match picked color
+  rgbDisplay.textContent = pickedColor;
+  // change colors of squares
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+  }
+  // change h1 background on reset
+  h1.style.backgroundColor = "#232323";
+  message.textContent = "";
+})
