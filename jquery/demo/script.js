@@ -1,0 +1,2 @@
+// $("selectorGoesHere")
+// similar to querySelectorAll
