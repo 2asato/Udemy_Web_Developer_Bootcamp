@@ -17,3 +17,12 @@ $("button").click(function(){
 });
 
 
+// keypress()
+// quick and easy way to add listener to Element(s)
+
+// listen for any keypress in any text input
+$('input[type="text"]').keypress(function(event){
+    if(event.which === 13){
+        alert("You Hit ENTER!")
+    }
+});
