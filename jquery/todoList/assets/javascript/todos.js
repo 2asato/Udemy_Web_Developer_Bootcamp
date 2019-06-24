@@ -1,5 +1,5 @@
 // Check off specific todos by clicking
-$('li').click(function(){
+$('ul').on("click", "li", function(){
     $(this).toggleClass('completed');
 });
 // without class
@@ -21,7 +21,7 @@ $('li').click(function(){
 // });
 
 // Click on X to delete Todo
-$('span').click(function(event){
+$('ul').on("click", "span", function(event){
     // without parent only the span is removed
     $(this).parent().fadeOut(500, function(){
         // refers to the li not the span
@@ -30,4 +30,17 @@ $('span').click(function(event){
     // jquery method that stops events from bubbling up to parents
     // stops the li toggle class function from occuring
     event.stopPropagation();
+})
+
+// add new todo
+$("input[type='text']").keypress(function(event){
+    // if the enter button is pressed
+    if(event.which === 13){
+        // grabbing new todo text from input
+        var todoText = $(this).val();
+        // clears input text
+        $(this).val("");
+        // create a new li and add to ul
+        $("ul").append("<li><span>X</span> " + todoText + "</li>")
+    }
 })
