@@ -9,7 +9,8 @@
     <!-- css -->
     <link rel="stylesheet" href="circles.css">
     <!-- paperscript -->
-	<script type="text/paperscript" canvas="myCanvas">
+    <script type="text/paperscript" canvas="myCanvas">
+    // creates a 10 by 10 grid with circles at every 100
 	for(var x = 0; x < 1000; x+= 100){
 		for(var y = 0; y < 1000; y+= 100){
 			new Path.Circle(new Point(x, y), 10).fillColor = "purple";
