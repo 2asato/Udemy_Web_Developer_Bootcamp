@@ -6,15 +6,27 @@
     <title>Circles</title>
     <!-- javascript -->
     <script type="text/javascript" src="paper-full.js"></script>
+    <!-- howler -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="circles.css">
     <!-- paperscript -->
     <script type="text/paperscript" canvas="myCanvas">
 
+    var keyData = {
+        a: {
+            color: 'purple',
+            sound: new Howl({
+                src: ['sounds/bubbles.mp3'],
+                html5: true
+            })
+        }
+    }
+
     var circles = [];
 
     function onKeyDown(event) {
-
+        
     // When a key is pressed, set the content of the text item:
         // finds the max point depending on size of screen
         // wont generate points off screen on resize
