@@ -26,7 +26,7 @@
     var circles = [];
 
     function onKeyDown(event) {
-        
+
     // When a key is pressed, set the content of the text item:
         // finds the max point depending on size of screen
         // wont generate points off screen on resize
@@ -38,6 +38,7 @@
         // creates new circle
         var newCircle = new Path.Circle(point, 500)
         newCircle.fillColor = "orange";
+        keyData[event.key].sound.play();
         circles.push(newCircle);
           
     }
