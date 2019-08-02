@@ -15,3 +15,9 @@ way to write javascript code on the server side
 * Using Node
     - interact with Node Console
     - run a file with Node
+        node <file name>
+        filename must end with js
+        ex. node app.js
+
+
+        REPL - Read, Evaluate, Print, Loop
