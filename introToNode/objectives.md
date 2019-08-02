@@ -11,3 +11,7 @@ way to write javascript code on the server side
     - great libraries
     - high performance
     - it's in javascript
+
+* Using Node
+    - interact with Node Console
+    - run a file with Node
