@@ -25,5 +25,13 @@ way to write javascript code on the server side
 
 * Intro to NPM
     - Define NPM
+        Node Package Manager
+        the package manager for javascript
     - Explain why NPM is awesome
+        easy to install in command line 
+        'npm install <name of package>'
+        centralized repository for just about anything
     - Intro the packages we will be using
+        express
+        mongoose
+        bodyparser
