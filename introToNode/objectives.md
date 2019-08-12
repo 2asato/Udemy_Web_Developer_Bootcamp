@@ -21,3 +21,9 @@ way to write javascript code on the server side
 
 
         REPL - Read, Evaluate, Print, Loop
+
+
+* Intro to NPM
+    - Define NPM
+    - Explain why NPM is awesome
+    - Intro the packages we will be using
