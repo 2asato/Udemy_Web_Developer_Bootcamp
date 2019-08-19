@@ -20,6 +20,20 @@ app.get('/dog', function(req, res){
     res.send('MEOW!');
 })
 
+// using route parameters
+app.get('/r/:subredditName', function(req, res){
+    var subreddit = req.params.subredditName;
+    res.send('WELCOME TO THE ' + subreddit.toUpperCase() + ' SUBREDDIT!');
+})
+app.get('/r/:subredditName/comments/:id/:title/', function(req, res){
+    res.send('Welcome to the comments page');
+})
+
+// route to anywhere but the above defined routes
+app.get('*', function(req, res){
+    res.send('YOU ARE A STAR!!!');
+})
+
 // Tell Express to listen for requests (start server)
 app.listen(3000, function(){
     console.log('Server listening on port 3000');
