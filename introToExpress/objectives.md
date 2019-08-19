@@ -19,3 +19,9 @@
     javascript object notation
     holds metadata relavent to the project, application, package
 * Use 'npm init' to create a new package.json
+
+# More Routing
+
+* Show the '*' route matcher
+* Write routes containing route parameters
+* Discuss route order
