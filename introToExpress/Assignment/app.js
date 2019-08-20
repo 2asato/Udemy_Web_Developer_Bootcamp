@@ -37,6 +37,11 @@ app.get('/repeat/:term/:count', function(req, res){
     res.send(string);
 })
 
+// If a user visits any other route, print:
+// "Sorry, page not found...What are you doing with your life?"
+app.get('*', function(req, res){
+    res.send("Sorry, page not found...What are you doing with your life?")
+})
 
 // Tell Express to listen for requests (start server)
 app.listen(3000, function(){
