@@ -3,7 +3,7 @@ var app = express();
 
 // '/' route
 app.get('/', function(req, res){
-    res.render("dogs.ejs");
+    res.render("home.ejs");
 })
 
 
