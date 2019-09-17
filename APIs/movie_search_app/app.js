@@ -4,7 +4,12 @@ var request = require('request');
 
 // search route
 app.get('/results', function(req, res){
-    res.send('hello it works')
+    request('http://omdbapi.com/?s=california&apikey=thewdb', function(error, response, body){
+        if(!error && response.statusCode == 200) {
+            var results = JSON.parse(body)
+            res.send(results['Search'][0]['Title']);
+        }
+    })
 })
 
 // results route
