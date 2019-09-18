@@ -3,6 +3,10 @@ var app = express();
 var request = require('request');
 app.set('view engine', 'ejs');
 
+app.get('/', function(req, res) {
+    res.render('search');
+})
+
 // search route
 app.get('/results', function(req, res){
     request('http://omdbapi.com/?s=california&apikey=thewdb', function(error, response, body){
