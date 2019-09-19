@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser')
 
 // campgrounds array
 var campgrounds = [
@@ -8,6 +9,7 @@ var campgrounds = [
     {name: 'Mountain Goat\'s Rest', image: 'https://live.staticflickr.com/3100/2564509897_e59ac5b2ca_m.jpg'}
 ]
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 // landing page
@@ -18,6 +20,19 @@ app.get('/', function(req, res) {
 // campground page
 app.get('/campgrounds', function(req, res) {
     res.render('campgrounds', {campgrounds: campgrounds})
+})
+
+// new campground page
+app.post('/campgrounds', function(req, res) {
+    res.send('you hit the post route')
+    // get data from form and add to campgrounds array
+
+    // redirect to campgrounds page
+})
+
+// add new campground page
+app.get('/campgrounds/new', function(req, res) {
+    res.send('add a new campground page')
 })
 
 // Tell Express to listen for requests (start server)
