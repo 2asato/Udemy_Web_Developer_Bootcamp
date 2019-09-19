@@ -4,9 +4,9 @@ var bodyParser = require('body-parser')
 
 // campgrounds array
 var campgrounds = [
-    {name: 'Salmon Creek', image: 'https://live.staticflickr.com/89/249248726_74274d7fde_m.jpg'},
-    {name: 'Granite Hill', image: 'https://farm6.staticflickr.com/5175/5534712299_d98b73b8f4_m.jpg'},
-    {name: 'Mountain Goat\'s Rest', image: 'https://live.staticflickr.com/3100/2564509897_e59ac5b2ca_m.jpg'}
+    {name: 'Salmon Creek', image: 'https://pixabay.com/get/57e1d14a4e52ae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'},
+    {name: 'Granite Hill', image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'},
+    {name: 'Mountain Goat\'s Rest', image: 'https://pixabay.com/get/55e8dc404f5aab14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'}
 ]
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,15 +24,18 @@ app.get('/campgrounds', function(req, res) {
 
 // new campground page
 app.post('/campgrounds', function(req, res) {
-    res.send('you hit the post route')
     // get data from form and add to campgrounds array
-
+    var name = req.body.name;
+    var image = req.body.image;
+    var newCampground = {name: name, image: image}
+    campgrounds.push(newCampground);
     // redirect to campgrounds page
+    res.redirect('/campgrounds');
 })
 
 // add new campground page
 app.get('/campgrounds/new', function(req, res) {
-    res.send('add a new campground page')
+    res.render('new.ejs')
 })
 
 // Tell Express to listen for requests (start server)
