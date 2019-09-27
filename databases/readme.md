@@ -9,3 +9,4 @@
         tables
     - nosql (non-relational)
         no tables
+        flexible
