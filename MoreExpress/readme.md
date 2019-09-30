@@ -36,3 +36,10 @@ ex. loop through all posts
 *   Show how to properly include public assets
 *   Properly configure our app to use EJS
 *   Use partials to dry up our code!
+
+
+#Post Requests!!!
+
+*   Write post routes, and test them with Postman
+*   Use a form to send a post request
+*   Use body parser to get form data
