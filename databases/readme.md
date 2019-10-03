@@ -14,5 +14,9 @@
 
 #Intro to MongoDB
 *   What is MongoDB?
+    - nosql (on-relational database)
+    - flexible and dynamic
 *   Why are we using it?
+    - most popular database with node
+    - good tools to use within an Express app
 *   Let's Install It!
