@@ -20,3 +20,15 @@
     - most popular database with node
     - good tools to use within an Express app
 *   Let's Install It!
+
+
+#Our First Mongo Commands
+*   mongod
+*   mongo
+*   help
+*   show dbs
+*   use
+*   insert
+*   find
+*   update
+*   remove
