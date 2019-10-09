@@ -65,6 +65,7 @@ Create Read Update Delete
 
 #Mongoose
 *   What is Mongoose?
+    - odm ObjectDataMapper
     - mongodb object modeling for node
     - npm package helps interact with mongodb database
 *   Why are we using it?
