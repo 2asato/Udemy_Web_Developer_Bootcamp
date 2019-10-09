@@ -61,3 +61,11 @@
 
 CRUD
 Create Read Update Delete
+
+
+#Mongoose
+*   What is Mongoose?
+    - mongodb object modeling for node
+    - npm package helps interact with mongodb database
+*   Why are we using it?
+*   Interact with a Mongo Database using Mongoose
