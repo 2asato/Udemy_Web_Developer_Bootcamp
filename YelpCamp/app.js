@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+// schema setup
 
 // campgrounds array
 var campgrounds = [
@@ -9,6 +12,7 @@ var campgrounds = [
     {name: 'Mountain Goat\'s Rest', image: 'https://pixabay.com/get/55e8dc404f5aab14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'}
 ]
 
+mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
