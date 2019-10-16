@@ -6,24 +6,27 @@ var mongoose = require('mongoose');
 // schema setup
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 });
 
 // campground model
 var Campground = mongoose.model('Campground', campgroundSchema);
 
-// Campground.create({
-//     name: 'Granite Hill', image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'
-// },function(err, campground){
-//     if(err){
-//         console.log(err);
+Campground.create({
+    name: 'Granite Hill', 
+    image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg',
+    description: 'This is a huge granite hill, no bathrooms. No water. Beautiful granite!'
+},function(err, campground){
+    if(err){
+        console.log(err);
         
-//     } else {
-//         console.log('NEWLY CREATED CAMPGROUND: ');
-//         console.log(campground);
+    } else {
+        console.log('NEWLY CREATED CAMPGROUND: ');
+        console.log(campground);
         
-//     }
-// })
+    }
+})
 
 // campgrounds array
 // var campgrounds = [
@@ -41,6 +44,7 @@ app.get('/', function(req, res) {
     res.render('landing')
 })
 
+// index route
 // campground page
 app.get('/campgrounds', function(req, res) {
     // Get all campgrounds from DB instead of campgrounds array
@@ -55,6 +59,7 @@ app.get('/campgrounds', function(req, res) {
     // res.render('campgrounds', {campgrounds: campgrounds})
 })
 
+// create route - add new campground to db
 // new campground page
 app.post('/campgrounds', function(req, res) {
     // get data from form and add to campgrounds array
@@ -74,9 +79,16 @@ app.post('/campgrounds', function(req, res) {
     })
 })
 
+// new route - show form to create new campground
 // add new campground page
 app.get('/campgrounds/new', function(req, res) {
     res.render('new.ejs')
+})
+
+app.get('/campgrounds/:id', function(req, res) {
+    // find the campground with provided ID
+    // render show template for that campground
+    res.send('THIS WILL BE THE SHOW PAGE ONE DAY!!!')
 })
 
 // Tell Express to listen for requests (start server)
