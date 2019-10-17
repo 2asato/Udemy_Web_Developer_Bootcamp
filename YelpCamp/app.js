@@ -88,8 +88,14 @@ app.get('/campgrounds/new', function(req, res) {
 // SHOW - shows more info about one campground
 app.get('/campgrounds/:id', function(req, res) {
     // find the campground with provided ID
-    // render show template for that campground
-    res.render('show')
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if(err){
+            console.log(err);
+            
+        } else {
+            res.render('show', {campground: foundCampground})
+        }
+    });
 })
 
 // Tell Express to listen for requests (start server)
