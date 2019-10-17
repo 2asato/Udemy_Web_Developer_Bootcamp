@@ -13,20 +13,20 @@ var campgroundSchema = new mongoose.Schema({
 // campground model
 var Campground = mongoose.model('Campground', campgroundSchema);
 
-Campground.create({
-    name: 'Granite Hill', 
-    image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg',
-    description: 'This is a huge granite hill, no bathrooms. No water. Beautiful granite!'
-},function(err, campground){
-    if(err){
-        console.log(err);
+// Campground.create({
+//     name: 'Granite Hill', 
+//     image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg',
+//     description: 'This is a huge granite hill, no bathrooms. No water. Beautiful granite!'
+// },function(err, campground){
+//     if(err){
+//         console.log(err);
         
-    } else {
-        console.log('NEWLY CREATED CAMPGROUND: ');
-        console.log(campground);
+//     } else {
+//         console.log('NEWLY CREATED CAMPGROUND: ');
+//         console.log(campground);
         
-    }
-})
+//     }
+// })
 
 // campgrounds array
 // var campgrounds = [
@@ -53,7 +53,7 @@ app.get('/campgrounds', function(req, res) {
             console.log(err);
             
         } else {
-            res.render('campgrounds', {campgrounds:allCampgrounds})
+            res.render('index', {campgrounds:allCampgrounds})
         }
     })
     // res.render('campgrounds', {campgrounds: campgrounds})
@@ -85,10 +85,11 @@ app.get('/campgrounds/new', function(req, res) {
     res.render('new.ejs')
 })
 
+// SHOW - shows more info about one campground
 app.get('/campgrounds/:id', function(req, res) {
     // find the campground with provided ID
     // render show template for that campground
-    res.send('THIS WILL BE THE SHOW PAGE ONE DAY!!!')
+    res.render('show')
 })
 
 // Tell Express to listen for requests (start server)
