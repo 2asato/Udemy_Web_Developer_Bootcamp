@@ -1,9 +1,7 @@
-// express
+// APP config
 var express = require('express'),
 app = express(),
-// body-parser
 bodyParser = require('body-parser'),
-// mongoose
 mongoose = require('mongoose');
 
 // configure mongoose
@@ -17,7 +15,34 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+// schema
+var blogSchema = new mongoose.Schema({
+    title: String,
+    image: String,
+    body: String,
+    created: { type: Date, default: Date.now }
+});
 
+// blog model
+var Blog = mongoose.model('Blog', blogSchema);
+
+// RESTFUL Routes
+
+app.get('/', function(req, res) {
+    res.redirect('/blogs');
+});
+
+// index route
+app.get('/blogs', function(req, res) {
+    Blog.find({}, function(err, blogs) {
+        if(err){
+            console.log('ERROR!!!');
+            
+        } else {
+            res.render('index', {blogs: blogs});
+        }
+    });
+});
 
 
 
