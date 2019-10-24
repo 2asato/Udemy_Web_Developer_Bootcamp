@@ -61,6 +61,19 @@ app.post('/blogs', function(req, res) {
     });
 });
 
+// show route
+app.get('/blogs/:id', function(req, res) {
+    // gets id with req.params.id
+    Blog.findById(req.params.id, function(err, foundBlog) {
+        if(err){
+            res.redirect('/blogs')
+        } else {
+            // blog matches blog from show template
+            res.render('show', {blog: foundBlog})
+        }
+    })
+})
+
 
 
 
