@@ -8,7 +8,8 @@ methodOverride = require('method-override')
 // configure mongoose
 mongoose.connect('mongodb://localhost/blog_app', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -97,6 +98,17 @@ app.put("/blogs/:id", function(req, res) {
         }
     })
 });
+
+// delete route
+app.delete('/blogs/:id', function(req, res) {
+    Blog.findByIdAndRemove(req.params.id, function(err) {
+        if(err){
+            res.redirect('/blogs')
+        } else {
+            res.redirect('/blogs')
+        }
+    })
+})
 
 
 
