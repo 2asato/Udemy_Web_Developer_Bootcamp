@@ -55,3 +55,12 @@ Destroy     /dogs/:id       DELETE          delete
 *   Add Update Route
 *   Add Update Form
 *   Add Method-Override
+
+#DESTROY
+*   Add Destroy Route
+*   Add Edit and Destroy Links
+
+#Final Updates
+*   Sanitize blog body
+*   Style Index
+*   Update REST Table
