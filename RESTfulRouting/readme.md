@@ -9,7 +9,7 @@ REST - a mapping between HTTP routes and CRUD
 
 RESTful Routes
 
-Name        Path            HTTP verb       Purpose
+Name        Path            HTTP verb       Purpose         
 =============================================================
 Index       /dogs           GET             List all dogs
 New         /dogs/new       GET             Show new dog form
@@ -28,7 +28,14 @@ Destroy     /dogs/:id       DELETE          delete
 
 #Blog Index
 *   Setup the Blog App
+    - npm init
+    - install express, mongoose, body-parser
+    - configure app 
+    - configure mongoose
+    - setup server
 *   Create the Blog model
+    - schema
+    - model
 *   Add INDEX route and template
 *   Add Simple Nav Bar
 
