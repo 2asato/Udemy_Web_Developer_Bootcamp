@@ -55,3 +55,7 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 *   Create a models directory
 *   Use module.exports
 *   Require everything correctly!
+
+#Add Seeds File
+*   Add a seeds.js file
+*   Run the seeds file every time the server starts
