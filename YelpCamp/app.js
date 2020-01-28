@@ -10,27 +10,6 @@ var seedDB = require('./seeds');
 
 
 seedDB();
-// Campground.create({
-//     name: 'Granite Hill', 
-//     image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg',
-//     description: 'This is a huge granite hill, no bathrooms. No water. Beautiful granite!'
-// },function(err, campground){
-//     if(err){
-//         console.log(err);
-        
-//     } else {
-//         console.log('NEWLY CREATED CAMPGROUND: ');
-//         console.log(campground);
-        
-//     }
-// })
-
-// campgrounds array
-// var campgrounds = [
-//     {name: 'Salmon Creek', image: 'https://pixabay.com/get/57e1d14a4e52ae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'},
-//     {name: 'Granite Hill', image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'},
-//     {name: 'Mountain Goat\'s Rest', image: 'https://pixabay.com/get/55e8dc404f5aab14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg'}
-// ]
 
 mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended: true}));
@@ -86,11 +65,12 @@ app.get('/campgrounds/new', function(req, res) {
 // SHOW - shows more info about one campground
 app.get('/campgrounds/:id', function(req, res) {
     // find the campground with provided ID
-    Campground.findById(req.params.id, function(err, foundCampground){
+    Campground.findById(req.params.id).populate('comments').exec(function(err, foundCampground){
         if(err){
             console.log(err);
             
         } else {
+            console.log(foundCampground)
             res.render('show', {campground: foundCampground})
         }
     });
