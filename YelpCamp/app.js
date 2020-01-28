@@ -3,12 +3,13 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Campground = require('./models/campground');
+var seedDB = require('./seeds');
 // var Comment = require('./models/comment');
 // var User = require('./models/user')
 
 
 
-
+seedDB();
 // Campground.create({
 //     name: 'Granite Hill', 
 //     image: 'https://pixabay.com/get/57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732773d39f44c35f_340.jpg',
