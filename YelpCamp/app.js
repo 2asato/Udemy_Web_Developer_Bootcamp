@@ -29,7 +29,7 @@ app.get('/campgrounds', function(req, res) {
             console.log(err);
             
         } else {
-            res.render('index', {campgrounds:allCampgrounds})
+            res.render('campgrounds/index', {campgrounds:allCampgrounds})
         }
     })
     // res.render('campgrounds', {campgrounds: campgrounds})
@@ -59,7 +59,7 @@ app.post('/campgrounds', function(req, res) {
 // new route - show form to create new campground
 // add new campground page
 app.get('/campgrounds/new', function(req, res) {
-    res.render('new.ejs')
+    res.render('campgrounds/new.ejs')
 })
 
 // SHOW - shows more info about one campground
@@ -71,9 +71,17 @@ app.get('/campgrounds/:id', function(req, res) {
             
         } else {
             console.log(foundCampground)
-            res.render('show', {campground: foundCampground})
+            res.render('campgrounds/show', {campground: foundCampground})
         }
     });
+})
+
+// =============================
+// COMMENTS ROUTES
+// =============================
+
+app.get('/campgrounds/:id/comments/new', function(req, res){
+    res.render('comments/new')
 })
 
 // Tell Express to listen for requests (start server)
