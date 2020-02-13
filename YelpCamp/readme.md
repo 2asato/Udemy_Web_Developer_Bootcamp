@@ -76,3 +76,7 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 #Finish Styling Show Page
 *   Add public directory
 *   Add custom stylesheet
+
+##Add User Model
+*   Install all packages needed for authentication
+*   Define User model
