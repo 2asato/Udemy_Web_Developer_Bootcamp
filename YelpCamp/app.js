@@ -157,6 +157,11 @@ app.post('/register', function(req, res){
     })
 })
 
+// show login form
+app.get('/login', function(req, res){
+    res.render('login');
+})
+
 // Tell Express to listen for requests (start server)
 app.listen(3000, function(){
     console.log('Yelp Camp server has started on port 3000');
