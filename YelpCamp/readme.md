@@ -93,4 +93,7 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 #Auth Pt. 4 - Logout/Navbar
 *   Add logout route
 *   Prevent user from adding a comment if not signed in
-*   Show/hide auth links correctly
+*   Add links to navbar
+
+#Auth Pt. 5 - Show/Hide Links
+*   Show/hide auth links in navbar correctly
