@@ -97,3 +97,10 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 
 #Auth Pt. 5 - Show/Hide Links
 *   Show/hide auth links in navbar correctly
+
+#Refactor the Routes
+*   Use Express router to reorganize all routes
+
+#Users + Comments
+*   Associate users and comments
+*   Save author's name to a comment automatically
