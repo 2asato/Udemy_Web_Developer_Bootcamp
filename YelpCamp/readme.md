@@ -116,3 +116,6 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 *   Add Update Route
 *   Fix $set problem
 
+#Deleting Campground
+*   Add Destroy Route
+*   Add Delete button

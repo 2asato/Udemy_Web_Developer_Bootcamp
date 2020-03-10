@@ -89,6 +89,17 @@ router.put('/:id', function(req, res){
     // redirect to show page
 })
 
+// DESTROY Campground ROUTE
+router.delete('/:id', function(req, res){
+    Campground.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect('/campgrounds')
+        } else {
+            res.redirect('/campgrounds')
+        }
+    })
+})
+
 // use currentUser on all pages
 router.use(function(req, res, next){
     res.locals.currentUser = req.user;
