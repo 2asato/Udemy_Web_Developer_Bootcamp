@@ -137,3 +137,5 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 #Authorization Part 2: Comments
 *   User can only edit his/her comments
 *   User can only delete his/her comments
+*   Hide/Show edit and delete buttons
+*   Refactor Middleware
