@@ -124,3 +124,8 @@ SHOW    /dogs/:id       GET         Shows info about one dog
 *   User can only edit his/her campgrounds
 *   User can only delete his/her campgrounds
 *   Hide/Show edit and delete buttons
+
+#Editing Comments
+*   Add Edit route for comments
+*   Add Edit button
+*   Add Update route
